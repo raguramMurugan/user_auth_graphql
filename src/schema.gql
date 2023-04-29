@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: String!
+  username: String!
+  password: String!
+  email: String!
+  age: Int
+}
+
+type LoginResponseDto {
+  token: String!
+  user: User!
+}
+
+type Query {
+  getAllUser: [User!]!
+  getUserByEmail(email: String!): User!
+}
+
+type Mutation {
+  signUp(user: CreateUserDto!): User!
+  signIn(userInput: LoginUserDto!): LoginResponseDto!
+}
+
+input CreateUserDto {
+  username: String!
+  password: String!
+  email: String!
+  age: Float
+}
+
+input LoginUserDto {
+  username: String!
+  password: String!
+}
